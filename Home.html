@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio | Home</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header id="navbar">
+    <nav>
+      <h2 class="logo">MyPortfolio</h2>
+      <ul>
+        <li><a href="Home.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+          <button id="darkModeToggle">🌙</button>
+
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-container">
+      <!-- صورة شخصية -->
+      <div class="hero-image">
+        <img src="images/profile.jpg" alt="My Photo">
+      </div>
+
+      <!-- النص -->
+      <div class="hero-text">
+        <h1>Hi, I'm <span>Yahya</span></h1>
+        <p>A passionate <strong>Full-Stack Developer</strong> who loves building modern web applications and solving real-world problems with code.</p>
+        
+        <div class="hero-buttons">
+          <a href="projects.html" class="btn">View My Projects</a>
+          <a href="contact.html" class="btn secondary">Contact Me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Yahya. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Script لتفعيل تأثير الـ scroll على الـ Navbar -->
+  <script>
+    window.addEventListener('scroll', function () {
+      const navbar = document.getElementById('navbar');
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+  </script>
+<script>
+  const toggleBtn = document.getElementById("darkModeToggle");
+  const body = document.body;
+
+  // حفظ الحالة عند التبديل
+  if (localStorage.getItem("dark-mode") === "enabled") {
+    body.classList.add("dark-mode");
+    toggleBtn.textContent = "☀️";
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+
+    if (body.classList.contains("dark-mode")) {
+      localStorage.setItem("dark-mode", "enabled");
+      toggleBtn.textContent = "☀️";
+    } else {
+      localStorage.setItem("dark-mode", "disabled");
+      toggleBtn.textContent = "🌙";
+    }
+  });
+</script>
+
+</body>
+</html>

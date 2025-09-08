@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Projects - Yahya Abualasab</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+  const navbar = document.getElementById('navbar');
+
+  window.addEventListener('scroll', () => {
+    if(window.scrollY > 50) {  
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+</script>
+
+</head>
+<body>
+ <header id="navbar">
+  <nav>
+    <h2 class="logo">MyPortfolio</h2>
+    <ul>
+      <li><a href="Home.html" >Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html"class="active">Projects</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+              <button id="darkModeToggle">🌙</button>
+
+  </nav>
+</header>
+
+
+  <section class="section projects-section">
+    <h2>My Projects on GitHub</h2>
+    <div class="projects-container">
+      <!-- Project 1 -->
+      <div class="project-card">
+        
+        <h3>FULL-STACK-BACKEND-Husly</h3>
+        <h6> Backend for job marketplace using Laravel, PHP, and MySQL</h6>
+        <p>A comprehensive backend development project utilizing PHP to create a robust server-side application.</p>
+        <a href="https://github.com/Osaid-Basha/FULL-STACK-BACKEND-Husly" target="_blank" class="btn">View Project</a>
+      </div>
+      <!-- Project 2 -->
+      <div class="project-card">
+       
+        <h3>FULL-STACK-FRONTEND-Husly</h3>
+        <h6>Frontend for job marketplace using Angular.</h6>
+        <p>An extensive frontend development project using CSS to design a responsive and user-friendly interface.</p>
+        <a href="https://github.com/Osaid-Basha/FULL-STACK-FRONTEND-Husly" target="_blank" class="btn">View Project</a>
+      </div>
+      <!-- Project 3 -->
+      <div class="project-card">
+       
+        <h3>Restaurant-Management-System</h3>
+        <p>A Java-based application designed to streamline restaurant operations, including order management and billing.</p>
+        <a href="https://github.com/SameeraNajjar/Restaurant-Management-System" target="_blank" class="btn">View Project</a>
+      </div>
+      <!-- Project 4 -->
+      <div class="project-card">
+       
+        <h3>QA</h3>
+        <p>A quality assurance project focused on enhancing software reliability through rigorous testing methodologies.</p>
+        <a href="https://github.com/yahyaabualasab1/QA" target="_blank" class="btn">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+  <p>&copy; 2025 Yahya abu al asab. All rights reserved.</p>
+  <div class="social-icons">
+    <a href="https://github.com/yahyaabualasab1" target="_blank"><img src="icons/github.png" alt="GitHub"></a>
+    <a href="https://linkedin.com/in/yahyaabualasab" target="_blank"><img src="icons/linkedin.png" alt="LinkedIn"></a>
+    <a href="mailto:yahyaabualasab@gmail.com"><img src="icons/email.png" alt="Email"></a>
+  </div>
+</footer>
+<script>
+  const toggleBtn = document.getElementById("darkModeToggle");
+  const body = document.body;
+
+  // حفظ الحالة عند التبديل
+  if (localStorage.getItem("dark-mode") === "enabled") {
+    body.classList.add("dark-mode");
+    toggleBtn.textContent = "☀️";
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+
+    if (body.classList.contains("dark-mode")) {
+      localStorage.setItem("dark-mode", "enabled");
+      toggleBtn.textContent = "☀️";
+    } else {
+      localStorage.setItem("dark-mode", "disabled");
+      toggleBtn.textContent = "🌙";
+    }
+  });
+</script>
+
+</body>
+</html>

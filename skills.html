@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills - My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header id="navbar">
+    <nav>
+      <h2 class="logo">MyPortfolio</h2>
+      <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="skills.html" class="active">Skills</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+                <button id="darkModeToggle">🌙</button>
+
+    </nav>
+  </header>
+
+  <!-- Skills Section -->
+  <section class="section skills-section">
+  <h2>My Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <h3>Frontend</h3>
+      <p>HTML, CSS, JavaScript, TypeScript, Angular, React</p>
+    </div>
+
+    <div class="skill-card">
+      <h3>Backend</h3>
+      <p>PHP, Laravel, SQL, Node.js</p>
+    </div>
+
+    <div class="skill-card">
+      <h3>Programming Languages</h3>
+      <p>Java, C++, Python</p>
+    </div>
+
+    <div class="skill-card">
+      <h3>Tools & Version Control</h3>
+      <p>Git, GitHub, GitLab, Postman, Trello</p>
+    </div>
+
+    <div class="skill-card">
+      <h3>Other Skills</h3>
+      <p>Problem Solving, Algorithms, Software Design, UX/UI</p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Yahya abu al asab. All rights reserved.</p>
+  </footer>
+  <script>
+  const toggleBtn = document.getElementById("darkModeToggle");
+  const body = document.body;
+
+  // حفظ الحالة عند التبديل
+  if (localStorage.getItem("dark-mode") === "enabled") {
+    body.classList.add("dark-mode");
+    toggleBtn.textContent = "☀️";
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+
+    if (body.classList.contains("dark-mode")) {
+      localStorage.setItem("dark-mode", "enabled");
+      toggleBtn.textContent = "☀️";
+    } else {
+      localStorage.setItem("dark-mode", "disabled");
+      toggleBtn.textContent = "🌙";
+    }
+  });
+</script>
+
+</body>
+</html>
