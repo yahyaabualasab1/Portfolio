@@ -364,6 +364,12 @@ footer .social-icons a img:hover {
   .section p { font-size: 0.9rem; }
   footer { font-size: 0.9rem; }
 }
+@media (max-width: 768px) {
+  .contact-cards {
+    grid-template-columns: 1fr; /* تتحول لعمود واحد */
+  }
+}
+
 /* Navbar الأساسي */
 #navbar {
   background: transparent; /* افتراضي شفاف */
