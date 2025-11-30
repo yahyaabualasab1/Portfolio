@@ -5,98 +5,71 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact - My Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <script>
-  const navbar = document.getElementById('navbar');
-
-  window.addEventListener('scroll', () => {
-    if(window.scrollY > 50) {  
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  });
-</script>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
   <!-- Navbar -->
- <header id="navbar">
-  <nav>
-    <h2 class="logo">MyPortfolio</h2>
-    <ul>
-       <li><a href="./index.html">Home</a></li>
-    <li><a href="./about.html">About</a></li>
-    <li><a href="./projects.html">Projects</a></li>
-    <li><a href="./skills.html">Skills</a></li>
-    <li><a href="./contact.html" class="active" >Contact</a></li>
-    </ul>
-              <button id="darkModeToggle">🌙</button>
+  <header id="navbar">
+    <nav>
+      <h2 class="logo">MyPortfolio</h2>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./projects.html">Projects</a></li>
+        <li><a href="./skills.html">Skills</a></li>
+        <li><a href="./contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  </nav>
-</header>
-
-<section class="section contact-section">
-  <h2>Contact Me</h2>
-  <div class="contact-cards">
-    <!-- Email Card -->
-    <div class="contact-card">
-      <h3>Email</h3>
-      <a href="mailto:yahyaabualasab@gmail.com?subject=Hello%20Yahya&body=Write%20your%20message%20here" target="_blank"></a>yahyaabualasab@gmail.com</a>
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <h2 class="section-title">Contact Me</h2>
+    <div class="contact-cards">
+      <div class="contact-card">
+        <h3><i class="fas fa-envelope"></i> Email</h3>
+        <a href="mailto:yahyaabualasab@gmail.com">yahyaabualasab@gmail.com</a>
+      </div>
+      <div class="contact-card">
+        <h3><i class="fab fa-github"></i> GitHub</h3>
+        <a href="https://github.com/yahyaabualasab1" target="_blank">github.com/yahyaabualasab1</a>
+      </div>
+      <div class="contact-card">
+        <h3><i class="fab fa-linkedin"></i> LinkedIn</h3>
+        <a href="https://linkedin.com/in/yahyaabualasab" target="_blank">linkedin.com/in/yahyaabualasab</a>
+      </div>
+      <div class="contact-card">
+        <h3><i class="fab fa-facebook"></i> Facebook</h3>
+        <a href="https://www.facebook.com/yhyy.ahmd.abwal.sb" target="_blank">facebook.com/yahyaabualasab</a>
+      </div>
+      <div class="contact-card">
+        <h3><i class="fab fa-instagram"></i> Instagram</h3>
+        <a href="https://www.instagram.com/yahya_abualasab10/" target="_blank">instagram.com/yahya_abualasab10</a>
+      </div>
     </div>
-    <!-- GitHub Card -->
-    <div class="contact-card">
-      <h3>GitHub</h3>
-      <a href="https://github.com/yahyaabualasab1" target="_blank">github.com/yahyaabualasab1</a>
-    </div>
-    <!-- LinkedIn Card -->
-    <div class="contact-card">
-      <h3>LinkedIn</h3>
-      <a href="https://linkedin.com/in/yahyaabualasab" target="_blank">linkedin.com/in/yahyaabualasab</a>
-    </div>
-    <div class="contact-card">
-      <h3>facebook</h3>
-      <a href="https://www.facebook.com/yhyy.ahmd.abwal.sb" target="_blank">facebook.com/in/yahyaabualasab</a>
-    </div>
-     <div class="contact-card">
-      <h3>instagram</h3>
-      <a href="https://www.instagram.com/yahya_abualasab10/" target="_blank">instagram.com/in/yahya_abualasab10</a>
-    </div>
-  </div>
-
-  
-</section>
+  </section>
 
   <!-- Footer -->
 <footer>
-  <p>&copy; 2025 Yahya abu al asab. All rights reserved.</p>
-  <div class="social-icons">
-    <a href="https://github.com/yahyaabualasab1" target="_blank"><img src="icons/github.png" alt="GitHub"></a>
-    <a href="https://linkedin.com/in/yahyaabualasab" target="_blank"><img src="icons/linkedin.png" alt="LinkedIn"></a>
-    <a href="mailto:yahyaabualasab@gmail.com"><img src="icons/email.png" alt="Email"></a>
-  </div>
-</footer>
-<script>
-  const toggleBtn = document.getElementById("darkModeToggle");
-  const body = document.body;
+    <p>© 2025 Yahya. All Rights Reserved.</p>
+  </footer>
 
-  // حفظ الحالة عند التبديل
-  if (localStorage.getItem("dark-mode") === "enabled") {
-    body.classList.add("dark-mode");
-    toggleBtn.textContent = "☀️";
-  }
+  <!-- Scripts -->
+  <script>
+   
 
-  toggleBtn.addEventListener("click", () => {
-    body.classList.toggle("dark-mode");
+    // Animate cards on scroll
+    const cards = document.querySelectorAll('.contact-card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.2 });
 
-    if (body.classList.contains("dark-mode")) {
-      localStorage.setItem("dark-mode", "enabled");
-      toggleBtn.textContent = "☀️";
-    } else {
-      localStorage.setItem("dark-mode", "disabled");
-      toggleBtn.textContent = "🌙";
-    }
-  });
-</script>
-
+    cards.forEach(card => observer.observe(card));
+  </script>
 </body>
 </html>
