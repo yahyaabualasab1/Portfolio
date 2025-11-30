@@ -339,53 +339,30 @@ footer .social-icons a img:hover {
   color: #00adb5;
 }
 
+/* ================= Responsive ================= */
+@media (max-width: 1024px) {
+  .hero img { max-width: 35%; }
+}
 
-/* Responsive */
 @media (max-width: 900px) {
-  .project-card {
-    width: 100%;
-  }
+  .project-card { width: 100%; }
 }
 
 @media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
+  nav ul { flex-direction: column; gap: 0.5rem; }
+  .skills-list { text-align: center; }
+  .contact-cards { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-
-  .section {
-    padding: 2rem 1rem;
-  }
-
-  header, footer {
-    padding: 1rem;
-  }
-
-  nav ul {
-    gap: 0.5rem;
-  }
-
-  nav a {
-    padding: 0.5rem;
-  }
-
-  .section h2 {
-    font-size: 1.5rem;
-  }
-
-  .section p {
-    font-size: 0.9rem;
-  }
-
-  footer {
-    font-size: 0.9rem;
-  }
+  .hero-text h1 { font-size: 2rem; }
+  .hero img { max-width: 60%; }
+  .section { padding: 2rem 1rem; }
+  header, footer { padding: 1rem; }
+  nav a { padding: 0.4rem 0.8rem; }
+  .section h2 { font-size: 1.5rem; }
+  .section p { font-size: 0.9rem; }
+  footer { font-size: 0.9rem; }
 }
 /* Navbar الأساسي */
 #navbar {
@@ -687,12 +664,7 @@ nav a:hover {
   font-size: 1rem;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .skills-list {
-    text-align: center;
-  }
-}
+
 .contact-section {
   display: flex;
   flex-direction: column;
@@ -1060,12 +1032,7 @@ body.dark-mode .contact-form button:hover {
   background: #3577d3;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .contact-container {
-    grid-template-columns: 1fr;
-  }
-}
+
 /* ================= Contact Section ================= */
 .contact-section {
   padding: 60px 20px;
@@ -1177,15 +1144,7 @@ body.dark-mode .contact-card a:hover {
   color: #3577d3;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .contact-cards {
-    grid-template-columns: 1fr;
-  }
-  .contact-section .section-title {
-    font-size: 2rem;
-  }
-}
+
 
 /* Contact Section Title */
 .contact-section h2 {
@@ -1194,3 +1153,5 @@ body.dark-mode .contact-card a:hover {
   font-size: 2.5rem;
   color: #00adb5;
 }
+
+
