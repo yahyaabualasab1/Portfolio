@@ -1161,3 +1161,202 @@ body.dark-mode .contact-card a:hover {
 }
 
 
+/* ================= Contact Section ================= */
+.contact-section {
+  padding: 60px 20px;
+  text-align: center;
+  background: var(--bg-color, #f9f9f9); /* يتوافق مع الوضع العادي والداكن */
+}
+
+.contact-section .section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #00adb5;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeSlideUp 1s forwards;
+}
+
+/* Grid Layout للكروت */
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Individual Card */
+.contact-card {
+  background: #fff;
+  padding: 25px 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: transform 0.4s, box-shadow 0.4s;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeSlideUp 0.8s forwards;
+}
+
+/* Delay متدرج لكل كارد */
+.contact-card:nth-child(1) { animation-delay: 0.2s; }
+.contact-card:nth-child(2) { animation-delay: 0.4s; }
+.contact-card:nth-child(3) { animation-delay: 0.6s; }
+.contact-card:nth-child(4) { animation-delay: 0.8s; }
+.contact-card:nth-child(5) { animation-delay: 1s; }
+
+/* Hover Effect */
+.contact-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+/* Card Titles & Links */
+.contact-card h3 {
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+  color: #00adb5;
+}
+
+.contact-card a {
+  color: #4b8df8;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.contact-card a:hover {
+  color: #3577d3;
+  transform: translateX(5px);
+}
+
+/* Fade + Slide Animation */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: auto;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeSlideUp 0.8s forwards;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #4b8df8;
+  box-shadow: 0 0 8px rgba(75,141,248,0.3);
+}
+
+.contact-form button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #4b8df8;
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: #3577d3;
+}
+
+/* Dark Mode */
+body.dark-mode .contact-section {
+  background: var(--bg-color);
+}
+
+body.dark-mode .contact-card {
+  background: #1f1f1f;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .contact-card h3 {
+  color: #5599ff;
+}
+
+body.dark-mode .contact-card a {
+  color: #5599ff;
+}
+
+body.dark-mode .contact-card a:hover {
+  color: #3577d3;
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+  background: #1e1e1e;
+  border-color: #444;
+  color: #fff;
+}
+
+body.dark-mode .contact-form input:focus,
+body.dark-mode .contact-form textarea:focus {
+  box-shadow: 0 0 8px rgba(75,141,248,0.5);
+}
+
+body.dark-mode .contact-form button {
+  background: #5599ff;
+}
+
+body.dark-mode .contact-form button:hover {
+  background: #3577d3;
+}
+
+/* ================= Responsive Improvements ================= */
+@media (max-width: 1024px) {
+  .contact-section {
+    padding: 50px 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-cards {
+    grid-template-columns: 1fr; /* كل كارد يحتل كامل العرض */
+    gap: 15px;
+  }
+
+  .contact-form {
+    width: 100%;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 40px 10px; /* تقليل المسافة من الجوانب */
+  }
+
+  .contact-card {
+    padding: 15px; /* تقليل padding للكروت */
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 10px; /* تصغير الحقول */
+  }
+
+  .contact-section h2 {
+    font-size: 2rem; /* تصغير العنوان */
+  }
+}
